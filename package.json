@@ -1,0 +1,28 @@
+{
+  "name": "typescript-react-native-geojson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-native": ">=0.59",
+    "react-native-maps": ">=0.24"
+  },
+  "dependencies": {
+    "@types/react": ">=16.8",
+    "@types/geojson": "^7946.0.7",
+    "@types/uuid": "^3.4.4",
+    "@types/react-native-maps": ">=0.24",
+    "uuid": "3.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.2"
+  }
+}
