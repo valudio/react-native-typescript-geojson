@@ -1,14 +1,19 @@
 {
   "name": "typescript-react-native-geojson",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "typescript",
+    "react",
+    "react-native",
+    "map",
+    "geojson"
+  ],
+  "author": "Gonzalo Soriano (sordesos@gmail.com)",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=16.8",
