@@ -1,6 +1,6 @@
 # typescript-react-native-geojson
 
-Typescript version of: [react-native-geojson](https://github.com/frankrowe/react-native-geojson) A fast way to add geojson to react-native-maps. with some steroids and utils
+Typescript version of: [react-native-geojson](https://github.com/frankrowe/react-native-geojson) A fast way to add geojson to react-native-maps. with some steroids and utils, but still very tiny! less than 8kb!
 
 ### Install:
 
@@ -36,12 +36,12 @@ const Map = props => (
 );
 ```
 
-### TODOs:
+### RoadMap:
 
-- [ ] Set up tslint
-- [ ] Set up minify?
-- [ ] Testing
-- [ ] Refactor
-- [ ] Add more typings
-- [ ] Accept more props
-- [ ] Better examples
+[ ] Set up tslint
+[X] Set up minify
+[ ] Testing
+[ ] Refactor
+[ ] Add more typings
+[ ] Accept more props
+[ ] Better examples
