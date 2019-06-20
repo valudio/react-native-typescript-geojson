@@ -1,19 +1,19 @@
 {
-  "name": "typescript-react-native-geojson",
-  "version": "0.0.2",
+  "name": "react-native-typescript-geojson",
+  "version": "0.0.1",
   "description": "Fast way to add geojson to react-native-maps. with some typescript and utils",
   "repository": {
     "type": "github",
-    "url": "https://github.com/valudio/typescript-react-native-geojson"
+    "url": "https://github.com/valudio/react-native-typescript-geojson"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
   "keywords": [
-    "typescript",
     "react",
     "react-native",
+    "typescript",
     "map",
     "geojson"
   ],

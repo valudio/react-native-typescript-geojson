@@ -1,4 +1,4 @@
-# typescript-react-native-geojson
+# react-native-typescript-geojson
 
 Typescript version of: [react-native-geojson](https://github.com/frankrowe/react-native-geojson)
 
@@ -6,9 +6,9 @@ Fast way to add geojson to react-native-maps. with some typescript and utils, bu
 
 ### Install:
 
-`npm install typescript-react-native-geojson`
+`npm install react-native-typescript-geojson`
 
-`yarn add typescript-react-native-geojson`
+`yarn add react-native-typescript-geojson`
 
 ### Example:
 
