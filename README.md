@@ -38,7 +38,10 @@ const Map = props => (
 
 ### TODOs:
 
+- [ ] Set up tslint
+- [ ] Set up minify?
 - [ ] Testing
 - [ ] Refactor
+- [ ] Add more typings
 - [ ] Accept more props
 - [ ] Better examples
