@@ -1,8 +1,11 @@
 import React from 'react';
 import { Polygon, Marker, Polyline } from 'react-native-maps';
+import { Feature } from 'geojson';
 import uuid from 'uuid';
 
-const makeOverlays = (features: any) => {
+import { IProps } from './models';
+
+const makeOverlays = (features: Feature[]) => {
   const points = features
     .filter(
       (f: any) =>
@@ -108,7 +111,7 @@ const makeCoordinates = (feature: any) => {
   return coordinates;
 };
 
-const Geojson = (props: any) => {
+const Geojson = (props: IProps) => {
   const overlays = makeOverlays(props.geojson.features);
   return (
     <>
