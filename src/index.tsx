@@ -1,85 +1,89 @@
 import React from 'react';
 import { Polygon, Marker, Polyline } from 'react-native-maps';
-import { Feature } from 'geojson';
+import { Feature, Position } from 'geojson';
 import uuid from 'uuid';
 
-import { IProps } from './models';
+import { IProps, IOverlay } from './models';
+import { flatten, makePoint, makeLine } from './helpers';
 
-const makeOverlays = (features: Feature[]) => {
+const makeOverlays = (features: Feature[]): IOverlay[] => {
   const points = features
     .filter(
-      (f: any) =>
+      f =>
         f.geometry &&
         (f.geometry.type === 'Point' || f.geometry.type === 'MultiPoint')
     )
-    .map((feature: any) =>
-      makeCoordinates(feature).map((coordinates: any) =>
+    .map(feature =>
+      makeCoordinates(feature).map(coordinates =>
         makeOverlay(coordinates, feature)
       )
     )
     .reduce(flatten, [])
-    .map((overlay: any) => ({ ...overlay, type: 'point' }));
+    .map(overlay => ({ ...overlay, type: 'point' }));
 
   const lines = features
     .filter(
-      (f: any) =>
+      f =>
         f.geometry &&
         (f.geometry.type === 'LineString' ||
           f.geometry.type === 'MultiLineString')
     )
-    .map((feature: any) =>
-      makeCoordinates(feature).map((coordinates: any) =>
+    .map(feature =>
+      makeCoordinates(feature).map(coordinates =>
         makeOverlay(coordinates, feature)
       )
     )
     .reduce(flatten, [])
-    .map((overlay: any) => ({ ...overlay, type: 'polyline' }));
+    .map(overlay => ({ ...overlay, type: 'polyline' }));
 
   const multipolygons = features
-    .filter((f: any) => f.geometry && f.geometry.type === 'MultiPolygon')
-    .map((feature: any) =>
-      makeCoordinates(feature).map((coordinates: any) =>
+    .filter(f => f.geometry && f.geometry.type === 'MultiPolygon')
+    .map(feature =>
+      makeCoordinates(feature).map(coordinates =>
         makeOverlay(coordinates, feature)
       )
     )
     .reduce(flatten, []);
 
   const polygons = features
-    .filter((f: any) => f.geometry && f.geometry.type === 'Polygon')
-    .map((feature: any) => makeOverlay(makeCoordinates(feature), feature))
-    .reduce(flatten, [])
+    .filter(f => f.geometry && f.geometry.type === 'Polygon')
+    .map(feature => makeOverlay(makeCoordinates(feature), feature))
     .concat(multipolygons)
-    .map((overlay: any) => ({ ...overlay, type: 'polygon' }));
+    .map(overlay => ({ ...overlay, type: 'polygon' }));
 
   return points.concat(lines).concat(polygons);
 };
 
-const flatten = (prev: any, curr: any) => prev.concat(curr);
-
-const makeOverlay = (coordinates: any, feature: any) => {
-  let overlay: any = {
+const makeOverlay = (coordinates: Position, feature: Feature): IOverlay => {
+  let overlay = {
     feature,
     id: feature.id ? feature.id : uuid()
   };
+
   if (
     feature.geometry.type === 'Polygon' ||
     feature.geometry.type === 'MultiPolygon'
   ) {
-    overlay.coordinates = coordinates[0];
-    if (coordinates.length > 1) {
-      overlay.holes = coordinates.slice(1);
-    }
-  } else {
-    overlay.coordinates = coordinates;
+    if (coordinates.length > 1)
+      return {
+        ...overlay,
+        coordinates: coordinates[0],
+        holes: coordinates.slice(1)
+      };
+
+    return {
+      ...overlay,
+      coordinates: coordinates[0]
+    };
   }
-  return overlay;
+
+  return {
+    ...overlay,
+    coordinates
+  };
 };
 
-const makePoint = (c: any) => ({ latitude: c[1], longitude: c[0] });
-
-const makeLine = (l: any) => l.map(makePoint);
-
-const makeCoordinates = (feature: any) => {
+const makeCoordinates = (feature: Feature) => {
   const g = feature.geometry;
   let coordinates;
 
@@ -97,11 +101,8 @@ const makeCoordinates = (feature: any) => {
     case 'Polygon':
       coordinates = g.coordinates.map(makeLine);
       break;
-    case 'Polygon':
-      coordinates = [makePoint(g.coordinates)];
-      break;
     case 'MultiPolygon':
-      coordinates = g.coordinates.map((p: any) => p.map(makeLine));
+      coordinates = g.coordinates.map(p => p.map(makeLine));
       break;
     default:
       coordinates = [];
@@ -113,9 +114,10 @@ const makeCoordinates = (feature: any) => {
 
 const Geojson = (props: IProps) => {
   const overlays = makeOverlays(props.geojson.features);
+
   return (
     <>
-      {overlays.map((overlay: any) => {
+      {overlays.map(overlay => {
         if (overlay.type === 'point') {
           return (
             <Marker
