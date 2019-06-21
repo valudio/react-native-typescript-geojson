@@ -41,7 +41,7 @@ const Map = props => (
 ### RoadMap:
 
 - [ ] Set up eslint
-- [x] Set up minify
+- [ ] Set up minify
 - [ ] Testing
 - [ ] Refactor
 - [x] Add more typings

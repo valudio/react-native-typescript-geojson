@@ -14,7 +14,7 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "tsc"
   },
   "main": "dist/index.js",
   "keywords": [
@@ -38,8 +38,6 @@
   },
   "devDependencies": {
     "ts-loader": "^6.0.3",
-    "typescript": "^3.5.2",
-    "webpack": "^4.35.0",
-    "webpack-cli": "^3.3.4"
+    "typescript": "^3.5.2"
   }
 }
