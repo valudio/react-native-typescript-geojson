@@ -1,6 +1,6 @@
 {
   "name": "react-native-typescript-geojson",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Fast way to add geojson to react-native-maps. with some typescript and utils",
   "repository": {
     "type": "github",
