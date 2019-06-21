@@ -40,10 +40,10 @@ const Map = props => (
 
 ### RoadMap:
 
-- [ ] Set up eslint
-- [ ] Set up minify
-- [ ] Testing
-- [ ] Refactor
-- [x] Add more typings
 - [ ] Accept more props
+- [ ] Testing
+- [x] Add more typings
 - [ ] Better examples
+- [ ] Refactor
+- [ ] Set up eslint ?
+- [ ] Set up minify ?
