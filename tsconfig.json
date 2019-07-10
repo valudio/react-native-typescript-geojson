@@ -11,5 +11,6 @@
     "noImplicitAny": true,
     "rootDir": "./src/",
     "outDir": "./dist/"
-  }
+  },
+  "exclude": ["src/**/*.spec.*"]
 }
