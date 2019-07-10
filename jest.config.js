@@ -9,7 +9,8 @@ module.exports = {
   },
   globals: {
     'ts-jest': {
-      tsconfig: 'tsconfig.json'
+      babelConfig: true
     }
-  }
+  },
+  cacheDirectory: '.jest/cache'
 };

@@ -12,5 +12,5 @@
     "rootDir": "./src/",
     "outDir": "./dist/"
   },
-  "exclude": ["src/**/*.spec.*"]
+  "exclude": ["src/**/__tests__/**"]
 }

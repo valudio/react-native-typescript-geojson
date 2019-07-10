@@ -1,6 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
-import MapView from 'react-native-maps';
 import TestRenderer from 'react-test-renderer';
 import { FeatureCollection } from 'geojson';
 
