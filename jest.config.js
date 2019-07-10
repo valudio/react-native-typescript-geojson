@@ -9,7 +9,10 @@ module.exports = {
   },
   globals: {
     'ts-jest': {
-      babelConfig: true
+      babelConfig: true,
+      diagnostics: {
+        ignoreCodes: [2531]
+      }
     }
   },
   cacheDirectory: '.jest/cache'
