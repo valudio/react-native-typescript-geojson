@@ -14,6 +14,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:update-snapshots": "jest --updateSnapshot",
     "build": "tsc"
   },
   "types": "dist/index.d.ts",
