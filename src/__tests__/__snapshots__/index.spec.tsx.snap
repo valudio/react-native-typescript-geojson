@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Geojson with a valid geojson should render the components 1`] = `
+<AIRMapMarker
+  coordinate={
+    Object {
+      "latitude": 37.82687023785448,
+      "longitude": -122.42305755615234,
+    }
+  }
+  onPress={[Function]}
+  stopPropagation={false}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "position": "absolute",
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`should change the pin color if prop is provided 1`] = `
+<AIRMapMarker
+  coordinate={
+    Object {
+      "latitude": 37.82687023785448,
+      "longitude": -122.42305755615234,
+    }
+  }
+  onPress={[Function]}
+  pinColor="#1ABA85"
+  stopPropagation={false}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "position": "absolute",
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`should put the pin in the correct coordinates 1`] = `
+<AIRMapMarker
+  coordinate={
+    Object {
+      "latitude": 37.82687023785448,
+      "longitude": -122.42305755615234,
+    }
+  }
+  onPress={[Function]}
+  stopPropagation={false}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "position": "absolute",
+      },
+      undefined,
+    ]
+  }
+/>
+`;
