@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`makeLine should return array point object 1`] = `
+Object {
+  "latitude": Any<Number>,
+  "longitude": Any<Number>,
+}
+`;
+
+exports[`makeLine should return array point object 2`] = `
+Object {
+  "latitude": Any<Number>,
+  "longitude": Any<Number>,
+}
+`;
+
+exports[`makePoint should return point object 1`] = `
+Object {
+  "latitude": Any<Number>,
+  "longitude": Any<Number>,
+}
+`;
